@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Heart Disease Predictor</h1>
+
+        <p> "Heart Disease Predictor" </p>
+        <p class="nav-links"><a href="{% url 'login' %}">Login</a> OR <a href="{% url 'register' %}">Register</a></p>
+    </div>
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+</body>
+
+</html>
