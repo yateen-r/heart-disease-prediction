@@ -4,14 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://img.freepik.com/premium-photo/minimalist-healthcare-concept-with-heart-stethoscope-simple-medical-illustration_210545-9535.jpg?w=740');
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+            text-align: center;
+            padding: 40px;
+        }
+
+        h2 {
+            color: #2c3e50;
+        }
+
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+
+        button {
+            display: inline-block;
+            background-color: #3498db;
+            color: #fff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-size: 1em;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        a {
+            color: #e74c3c;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #c0392b;
+        }
+    </style>
 </head>
 <body>
-    <h2>Login</h2>
     <form method="POST">
+        <h2>Login</h2>
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Login</button>
+        <p>Don't have an account? <a href="{% url 'register' %}">Register here</a></p>
     </form>
-    <p>Don't have an account? <a href="{% url 'register' %}">Register here</a></p>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(button => {
+                button.addEventListener('mouseover', function () {
+                    this.style.transform = 'translateY(-4px)';
+                });
+                button.addEventListener('mouseout', function () {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
