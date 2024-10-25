@@ -1,23 +1,105 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <title>Home Page - Heart Disease Predictor</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bg%20for%20login%20image-HCNgAfKmR9pIDlsxUNPjHcy5hRqONm.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .content-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 60px;
+            margin-right: 5%;
+            max-width: 600px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #e74c3c;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+            text-align: center;
+        }
+
+        p {
+            color: #34495e;
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            text-align: center;
+            font-family: 'Lora', serif;
+
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: #fff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-size: 1em;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container">
+    <div class="content-box">
         <h1>Heart Disease Predictor</h1>
-
-        <p> "Heart Disease Predictor" </p>
-        <p class="nav-links"><a href="{% url 'login' %}">Login</a> OR <a href="{% url 'register' %}">Register</a></p>
+        <p>Let us help you keep your heart strong and healthy.<br>
+        Stay ahead of heart disease with smarter predictions.</p>
+        <div class="btn-container">
+            <a href="{% url 'login' %}" class="btn">Login</a>
+            <a href="{% url 'register' %}" class="btn">New User? </a>
+        </div>
     </div>
 
-    <script src="{% static 'js/scripts.js' %}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(button => {
+                button.addEventListener('mouseover', function () {
+                    this.style.transform = 'translateY(-4px)';
+                });
+                button.addEventListener('mouseout', function () {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
