@@ -3,10 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+    <title>Registration Successful - Heart Disease Predictor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('https://www.shutterstock.com/image-photo/stethoscope-red-decorative-heart-on-260nw-2133736579.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow: hidden; 
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9); 
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 320px; 
+            margin-left: auto;
+            margin-right: auto;
+            transform: translateX(-300px); 
+        }
+
+        h2 {
+            color: #2ecc71;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+            transform: scale(1.05); 
+        }
+
+        
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: linear-gradient(transparent, white);
+        }
+    </style>
 </head>
 <body>
-    <h2>Welcome!</h2>
-    <p>You have successfully logged in.</p>
+    <div class="container">
+        <h2>Welcome!</h2>
+        <p>You have successfully registered.</p>
+        <a href="{% url 'login' %}" class="btn" id="loginBtn">Go to Login</a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginBtn = document.getElementById('loginBtn');
+            loginBtn.addEventListener('mouseover', function() {
+                this.style.transform = 'scale(1.05)';
+            });
+            loginBtn.addEventListener('mouseout', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
 </body>
 </html>
